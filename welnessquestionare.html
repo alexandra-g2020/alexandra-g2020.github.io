@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>screentime - Path B</title>
+</head>
+<body>
+
+<h1>Screen Time Meter</h1>
+<p>Answer the questions to see how much time you are spending on screens.</p>
+<hr>
+<p>How many hours have you not spent on screens today?</p>
+<p>
+<select id="hoursonscreens">
+<option value="0"> </option>
+<option value="1">1-4</option>
+<option value="2">5-6</option>
+<option value="3">7-8</option>
+<option value="4">9-10</option>
+</select>
+</p>
+<hr>
+<p>How many breaks do you think you have taken today?</p>
+<p>
+<select id="numberofbreaks">
+<option value="0"> </option>
+<option value="1">none</option>
+<option value="2">1-2</option>
+<option value="3">3-4</option>
+<option value="4">5+</option>
+</select>
+</p>
+<hr>
+<p>What percentage of your screen time has been used for academics do you think?</p>
+<p>
+<select id="academicscreentime">
+<option value="0"> </option>
+<option value="1">0-10%</option>
+<option value="2">20-40%</option>
+<option value="3">50-70%</option>
+<option value="4">80-100%</option>
+</select>
+</p>
+
+
+
+<button onclick="
+computeWellness(
+document.getElementById('hoursonscreens').value,
+document.getElementById('numberofbreaks').value,
+document.getElementById('academicscreentime').value
+)">screen time?</button>
+
+
+
+<p id="putHere"></p>
+
+
+<script>
+
+function computeWellness(hoursonscreens,numberofbreaks,academicscreentime){
+var hoursonScreens = Number(hoursonscreens);
+var numberofBreaks = Number(numberofbreaks);
+var academicScreentime = Number(academicscreentime);
+var wellnessNumber = hoursonScreens + numberofBreaks + academicScreentime;
+var wellnessStatement = "";
+if (wellnessNumber <= 3){
+wellnessStatement = "You have spent way too much time on screens today and might consider taking breaks and going for a walk"
+} else if (wellnessNumber > 3 && wellnessNumber < 6) {
+wellnessStatement = "You might consider taking better care of yourself."
+} else if (wellnessNumber >= 6 && wellnessNumber < 10) {
+wellnessStatement = "You have been doing well staying off screens and practicing self care"
+} else if (wellnessNumber >= 11) {
+wellnessStatement = "You seem to be doing well. Good job!"
+}
+document.getElementById('putHere').innerHTML = wellnessStatement;
+}
+
+</script>
+<a href="file:///Users/Lexie/Desktop/LG-PathB-master/index2.html" target="_blank">click here to multiply any numbers!</a>
+<br/>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</body>
+</html>
+

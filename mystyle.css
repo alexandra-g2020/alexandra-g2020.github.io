@@ -1,13 +1,14 @@
+
 body {
-    background-color: #ffffff;
-	    font-family: courier;
+  background-color: #92b5ef;
 }
+
 h1 {
-     color: #223640;
+  color: white;
+  text-align: center;
 }
+
 p {
-     color: #000000;
-}
-h2 {
-	color: #5f6e75;
+  font-family: verdana;
+  font-size: 20px;
 }
